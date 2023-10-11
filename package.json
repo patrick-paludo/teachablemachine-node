@@ -1,5 +1,5 @@
 {
-  "name": "@sashido/teachablemachine-node",
+  "name": "@patrick-paludo/teachablemachine-node",
   "version": "1.2.2",
   "description": "Simplifies integration with Teachable Machine models from Google",
   "author": {
@@ -9,10 +9,10 @@
   "license": "Apache-2.0",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/SashiDo/teachablemachine-node.git"
+    "url": "git+https://github.com/patrick-paludo/teachablemachine-node.git"
   },
   "bugs": {
-    "url": "https://github.com/SashiDo/teachablemachine-node/issues"
+    "url": "https://github.com/patrick-paludo/teachablemachine-node/issues"
   },
   "engines": {
     "node": ">= 10.2.1"
