@@ -131,14 +131,14 @@ class SashiDoTeachableMachine {
   }
 
   async classify(params) {
-    const { imageUrl, imageBuffer } = params;
+    const { imageUrl, imageFile } = params;
 
     if (imageUrl) {
       if (!imageUrl.startsWith("data:image/") && !isImageUrl(imageUrl)) {
         return Promise.reject({ error: "Image URL is not valid!" });
       }
-    } else if (imageBuffer) {
-      if (imageBuffer.length === 0) {
+    } else if (imageFile) {
+      if (imageFile.buffer.length === 0) {
         return Promise.reject({ error: "Image buffer is empty!" });
       }
     } else {
@@ -156,15 +156,15 @@ class SashiDoTeachableMachine {
     ); // method, delay, retries
   }
 
-  async inference({ imageUrl, imageBuffer }) {
+  async inference({ imageUrl, imageFile }) {
     try {
       let data;
       let buffer;
       let contentType;
 
-      if (imageBuffer) {
-        buffer = imageBuffer;
-        contentType = "image/jpeg";
+      if (imageFile) {
+        buffer = imageFile.buffer;
+        contentType = "image/" + imageFile.mimetype;
       } else if (imageUrl.startsWith("data:image/")) {
         data = parseDataUrl(imageUrl);
 
